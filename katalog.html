@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog gambar anime naruto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('fantasi.jpg') no-repeat center center/cover;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background:rgba(255, 255, 255, 0.26);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .header {
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+        }
+        h1 {
+            color: #333;
+            margin: 0;
+        }
+        .btn-login {
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            padding: 8px 15px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+        .btn-login:hover {
+            background: linear-gradient(45deg, #764ba2, #667eea);
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .painting {
+            width: 250px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+            background: white;
+        }
+        .painting:hover {
+            transform: scale(1.05);
+        }
+        .painting img {
+            width: 100%;
+            display: block;
+        }
+        .title {
+            padding: 10px;
+            background: #ff8800;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Katalog Gambar Anime</h1>
+            <button class="btn-login" onclick="window.location.href='login.html'">Login</button>
+        </div>
+        <div class="gallery" id="gallery"></div>
+    </div>
+
+    <script>
+        const paintings = [
+            { image: "gara.jpg" },
+            { image: "naruto.jpeg" },
+            { image: "minato.jpeg" },
+            { image: "pain.jpeg" },
+            { image: "kakasih.jpeg" },
+            { image: "itachi.jpg" }
+        ];
+
+        const gallery = document.getElementById("gallery");
+
+        paintings.forEach(painting => {
+            const div = document.createElement("div");
+            div.classList.add("painting");
+            div.innerHTML = `
+                <img src="${painting.image}" alt="${painting.title}">
+                <div class="title">${painting.title}</div>
+            `;
+            gallery.appendChild(div);
+        });
+    </script>
+</body>
+</html>

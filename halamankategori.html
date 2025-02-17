@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Kategori</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            display: flex;
+        }
+        .sidebar {
+            width: 200px;
+            background: #333;
+            color: white;
+            padding: 20px;
+            height: 100vh;
+            position: fixed;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            padding: 10px;
+            cursor: pointer;
+        }
+        .sidebar ul li:hover {
+            background: #444;
+        }
+        .content {
+            margin-left: 220px;
+            padding: 20px;
+            width: calc(100% - 220px);
+        }
+        .container {
+            max-width: 600px;
+            background: rgb(206, 14, 14);
+            padding: 100px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin-left: 100px;
+            margin-top: 15px;
+            background: url('minato.jpeg') no-repeat center center/cover;
+
+        }
+        h2 {
+            text-align: center;
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .kategori-container {
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+        }
+        .kategori-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 9px;
+            background: #f9f9f9;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .btn {
+            padding: 8px 12px;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn-delete {
+            background: red;
+        }
+        .btn-add {
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h3>Dashboard</h3>
+        <ul>
+            <li onclick="window.location.href='halamanadmin.html'">Beranda</li>
+            <li onclick="window.location.href='halamanproduk.html'">Produk</li>
+            <li onclick="window.location.href='kategori.html'">Kategori</li>
+            <li onclick="window.location.href='user.html'">User</li>
+            <li onclick="logout()">Keluar</li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="container">
+            <h2>Daftar Kategori</h2>
+            <div class="header-container">
+                <button class="btn btn-add" onclick="window.location.href='tambahkategori.html'">Tambah Kategori</button>
+            </div>
+            <div class="kategori-container" id="kategoriList">
+                <div class="kategori-item">
+                    <span>minato</span> 
+                    <button class="btn btn-delete" onclick="hapusKategori(this)">Hapus</button>
+                </div>
+                <div class="kategori-item">
+                    <span>kakashi</span> 
+                    <button class="btn btn-delete" onclick="hapusKategori(this)">Hapus</button>
+                </div>
+                <div class="kategori-item">
+                    <span>naruto</span> 
+                    <button class="btn btn-delete" onclick="hapusKategori(this)">Hapus</button>
+                </div>
+                <div class="kategori-item">
+                    <span>gara</span> 
+                    <button class="btn btn-delete" onclick="hapusKategori(this)">Hapus</button>
+                </div>
+                <div class="kategori-item">
+                    <span>pain</span> 
+                    <button class="btn btn-delete" onclick="hapusKategori(this)">Hapus</button>
+                </div>
+                <div class="kategori-item">
+                    <span>itachi</span> 
+                    <button class="btn btn-delete" onclick="hapusKategori(this)">Hapus</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function hapusKategori(button) {
+            button.parentElement.remove();
+            alert("Berhasil menghapus kategori");
+        }
+        function logout() {
+            window.location.href = "login.html";
+        }
+    </script>
+</body>
+</html>

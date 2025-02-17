@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Kategori</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            display: flex;
+        }
+        .sidebar {
+            width: 200px;
+            background: #333;
+            color: white;
+            padding: 20px;
+            height: 100vh;
+            position: fixed;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            padding: 10px;
+            cursor: pointer;
+        }
+        .sidebar ul li:hover {
+            background: #444;
+        }
+        .content {
+            margin-left: 220px;
+            padding: 20px;
+            width: calc(100% - 220px);
+        }
+        .container {
+            max-width: 500px;
+            background: rgb(209, 19, 19);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-left: 50px;
+            margin-top: 50px;
+            color: #ccc;
+            background: url('kapal.jpg') no-repeat center center/cover;
+
+        }
+        h2 {
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+            margin-right: 17px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+        }
+        .btn {
+            padding: 8px 12px;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn-back {
+            background: blue;
+            text-decoration: none;
+            padding: 8px 12px;
+            color: white;
+            display: inline-block;
+            border-radius: 5px;
+        }
+        .btn-save {
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h3>Dashboard</h3>
+        <ul>
+            <li onclick="window.location.href='halamanadmin.html'">Beranda</li>
+            <li onclick="window.location.href='halamanproduk.html'">Produk</li>
+            <li onclick="window.location.href='kategori.html'">Kategori</li>
+            <li onclick="window.location.href='user.html'">User</li>
+            <li onclick="logout()">Keluar</li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="container">
+            <h2>Tambah Kategori</h2>
+            <div class="form-group">
+                <label for="namaKategori">Nama Kategori:</label>
+                <input type="text" id="namaKategori" placeholder="Masukkan nama kategori">
+            </div>
+            <div class="button-group">
+                <a href="halamankategori.html" class="btn-back">Kembali</a>
+                <button class="btn btn-save">Simpan Kategori</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function logout() {
+            window.location.href = "login.html";
+        }
+    </script>
+</body>
+</html>

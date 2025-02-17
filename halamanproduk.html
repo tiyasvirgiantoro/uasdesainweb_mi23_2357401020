@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Produk</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f3f3f3;
+            display: flex;
+        }
+        .sidebar {
+            width: 200px;
+            background: #333;
+            color: white;
+            padding: 20px;
+            height: 100vh;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            padding: 10px;
+            cursor: pointer;
+        }
+        .sidebar ul li:hover {
+            background: #444;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+            background: url('kakasih.jpeg') no-repeat center center/cover;
+            margin: 20px;
+            color: #000000;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(5, 5, 5, 0.1);
+        }
+        .table-container {
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background: #ff8800;
+            color: white;
+        }
+        .btn {
+            padding: 5px 10px;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn-delete {
+            background: red;
+        }
+        .btn-edit {
+            background: blue;
+        }
+        .btn-add {
+            background: green;
+            display: block;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h3>Dashboard</h3>
+        <ul>
+            <li onclick="window.location.href='halamanadmin.html'">Beranda</li>
+            <li onclick="window.location.href='produk.html'">Produk</li>
+            <li onclick="window.location.href='halamankategori.html'">Kategori</li>
+            <li onclick="window.location.href='user.html'">User</li>
+            <li onclick="logout()">Keluar</li>
+        </ul>
+    </div>
+    
+    <div class="content">
+        <h2>Halaman Produk</h2>
+        <button class="btn btn-add" onclick="window.location.href='tambahproduk.html'">Tambah Produk</button>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Kode Produk</th>
+                        <th>Nama Produk</th>
+                        <th>Kategori</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="produkList">
+                    <tr>
+                        <td>P0001</td>
+                        <td>minato</td>
+                        <td>hokage 4</td>
+                        <td>
+                            <button class="btn btn-edit">✏️</button>
+                            <button class="btn btn-delete" onclick="hapusProduk(this)">❌</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>P0002</td>
+                        <td>naruto</td>
+                        <td>hokage 7</td>
+                        <td>
+                            <button class="btn btn-edit">✏️</button>
+                            <button class="btn btn-delete" onclick="hapusProduk(this)">❌</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>P0003</td>
+                        <td>kakashi</td>
+                        <td>hokage 6</td>
+                        <td>
+                            <button class="btn btn-edit">✏️</button>
+                            <button class="btn btn-delete" onclick="hapusProduk(this)">❌</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>P0004</td>
+                        <td>gara</td>
+                        <td>kazekage 5</td>
+                        <td>
+                            <button class="btn btn-edit">✏️</button>
+                            <button class="btn btn-delete" onclick="hapusProduk(this)">❌</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>P0005</td>
+                        <td>itachi</td>
+                        <td>hero</td>
+                        <td>
+                            <button class="btn btn-edit">✏️</button>
+                            <button class="btn btn-delete" onclick="hapusProduk(this)">❌</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>P0006</td>
+                        <td>pain</td>
+                        <td>vilian</td>
+                        <td>
+                            <button class="btn btn-edit">✏️</button>
+                            <button class="btn btn-delete" onclick="hapusProduk(this)">❌</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script>
+        function hapusProduk(button) {
+            button.closest('tr').remove();
+            alert("Berhasil menghapus produk");
+        }
+
+        function logout() {
+            window.location.href = "login.html";
+        }
+    </script>
+</body>
+</html>

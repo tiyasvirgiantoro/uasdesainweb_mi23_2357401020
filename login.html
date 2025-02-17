@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('isekai.jpg') no-repeat center center/cover;
+        }
+        .login-container {
+            background: rgba(255, 255, 255, 0.26);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.26);
+            width: 300px;
+            text-align: center;
+        }
+        .login-container h2 {
+            margin-bottom: 15px;
+        }
+        .input-group {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .input-group input {
+            width: 95%;
+            padding: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.26);;
+            border-radius: 5px;
+        }
+        .input-group input::placeholder {
+            color: #666;
+        }
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+        }
+        .btn {
+            width: 48%;
+            padding: 8px;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn-login {
+            background: rgba(255, 255, 255, 0.26);
+            color:rgb(53, 41, 41)
+        }
+        .btn-login:hover {
+            background: #40af4f;
+        }
+        .btn-back {
+            background: rgba(255, 255, 255, 0.26);
+            color: rgb(53, 41, 41);
+        }
+        .btn-back:hover {
+            background: #999;
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+            display: block;
+            text-align: left;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div class="input-group">
+                <input type="text" id="username" name="username" placeholder="Username">
+            </div>
+            <span class="error" id="userError"></span>
+            <div class="input-group">
+                <input type="password" id="password" name="password" placeholder="Password">
+            </div>
+            <span class="error" id="passError"></span>
+            <div class="button-group">
+                <button type="button" class="btn btn-back" onclick="window.location.href='katalog.html'">Kembali</button>
+                <button type="submit" class="btn btn-login">Login</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            let valid = true;
+            let username = document.getElementById('username').value;
+            let password = document.getElementById('password').value;
+            let userError = document.getElementById('userError');
+            let passError = document.getElementById('passError');
+            
+            userError.textContent = '';
+            passError.textContent = '';
+            
+            if (username.trim() === '') {
+                userError.textContent = 'Username wajib diisi';
+                valid = false;
+            }
+            if (password.trim() === '') {
+                passError.textContent = 'Password wajib diisi';
+                valid = false;
+            }
+            
+            if (valid) {
+                alert('Login berhasil!');
+                window.location.href = 'halamanadmin.html';
+            }
+        });
+    </script>
+</body>
+</html>
